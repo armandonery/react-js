@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>React Imagen</title>
+
+    <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class App extends React.Component {
+          render() {
+
+            // Constante name
+            const name ='Rusia';
+            
+            // Constante imgUrl
+            const imgUrl = 'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cnVzc2lhfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
+            
+            return (
+            <div>
+                {/* Template string de constante name */}
+                <h1>{ name }</h1>
+                
+                {/* Template string de constante imgUrl */}
+                <img src={imgUrl} />
+                
+            </div>
+            );
+          }
+        }
+  
+        ReactDOM.render(<App />, document.getElementById('root'))
+      </script>
+
+  </body>
+</html>
