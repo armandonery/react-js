@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>React State</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Imports -->
+    <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class App extends React.Component {
+
+          //  Se añade el constructor
+          constructor(props) {
+            super(props);
+            this.state = {name: 'Spider man'};
+          }
+          
+          // Se define el metodo handleClick
+          handleClick(name){
+            this.setState({name:name});
+          }
+          
+          render() {
+            return (
+              <div>
+                <h1>Que tal!!, {this.state.name}!</h1>
+                {/* Se llama el metodo handleClick */}
+                <button onClick={() => {this.handleClick('Spider man')}}>Spider man</button>
+                
+                {/* Se llama el metodo handleClick */}
+                <button onClick={() => {this.handleClick('Iron man')}}>Iron man</button>
+                
+              </div>
+            );
+          }
+        }
+  
+        ReactDOM.render(<App />, document.getElementById('root'))
+      </script>
+
+  </body>
+</html>
