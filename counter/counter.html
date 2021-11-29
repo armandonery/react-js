@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>React Counter</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Imports -->
+    <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class App extends React.Component {
+
+          // Se crea el constructor
+          constructor(props) {
+                super(props);
+                // Define el estado
+                this.state = {count:0}
+                
+          }
+            
+          // Se crea el metodo handleClick
+          handleClick(){
+            this.setState({count: this.state.count + 1})
+          }
+
+          render() {
+                return (
+                <div>
+                    <h1>
+                    {/* Muestra el valor del estado */}
+                    {this.state.count}
+                    
+                    </h1>
+                    {/* Se agrega el boton */}
+                    <button onClick={() =>{this.handleClick()}}>+</button>
+                    
+                </div>
+                );
+            }
+        }
+  
+        ReactDOM.render(<App />, document.getElementById('root'))
+      </script>
+
+  </body>
+</html>
