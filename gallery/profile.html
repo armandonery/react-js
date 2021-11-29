@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Profile gallery</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+
+  <!-- script -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="importmap">
+  {
+  "imports": {
+      "react": "https://cdn.skypack.dev/react",
+      "react-dom": "https://cdn.skypack.dev/react-dom"
+  }
+  }
+  </script>
+
+<!-- React js -->
+<script type="text/babel" data-type="module">
+    import * as React from 'react';
+    import * as ReactDOM from 'react-dom';
+    
+    function Profile({ name, imageUrl }) {
+    return (
+        <img
+        className="image"
+        src={imageUrl}
+        alt={name}
+        />
+    );
+    }
+
+    let Root = function Gallery() {
+    return (
+        <section>
+        <Profile
+            name="City"
+            imageUrl="https://images.unsplash.com/photo-1638204997506-6dd11dd187de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+        />
+        <Profile
+            name="Mountain"
+            imageUrl="https://images.unsplash.com/photo-1638201977889-7cf4026c7960?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+        />
+        <Profile
+            name="Paris"
+            imageUrl="https://images.unsplash.com/photo-1638051017225-0d9fcca18cf4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+        />
+        </section>
+    );
+    }
+    
+    
+    ReactDOM.render(<Root />, document.getElementById('root'));
+    </script>
+
+<style>
+
+    .image {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        margin: 25px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+</style>
+
+</html>
